@@ -10,7 +10,8 @@ public class Contador {
 		this.numero = 0;
 	}
 	
-	public void contar() {
+	// Visibilidad, sincronización, vuelta
+	public synchronized void contar() {
 		if(positivo)
 		{
 			this.numero++;
@@ -21,14 +22,14 @@ public class Contador {
 		}
 	}
 	
-	public void descontar() {
+	public synchronized void descontar() {
 		if(!positivo)
-		{
-			this.numero++;
+		{			
+				this.numero++;
 		}
 		else
 		{
-			this.numero--;
+				this.numero--;		
 		}
 	}
 

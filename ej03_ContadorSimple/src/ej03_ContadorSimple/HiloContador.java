@@ -13,9 +13,13 @@ public class HiloContador implements Runnable {
 
 	@Override
 	public void run() {
-		for (int i = 0; i < vueltas; i++) {
-			contador.contar();
-			
+		//Sección crítica. Cambia la variable compartida
+		for (int i = 0; i < vueltas; i++) {			
+			//Evita que otros puedan acceder al valor antes de tiempo.
+			//Ayuda para convertir un programa en "Thread safe"
+		//	synchronized (contador) { 
+				contador.contar();
+		//	}		
 		}
 	}
 }

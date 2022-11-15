@@ -13,8 +13,9 @@ public class HiloDescontador extends Thread {
 	@Override
 	public void run() {
 		for (int i = 0; i < vueltas; i++) {
-			contador.descontar();
-			
+		//  synchronized (contador) {
+				contador.descontar();
+			//}
 		}
 	}
 }
