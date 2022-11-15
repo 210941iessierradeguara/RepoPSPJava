@@ -2,8 +2,7 @@ package ej03_ContadorSimple;
 
 public class HiloDescontador extends Thread {
 	private int vueltas;
-	private Contador contador;
-	
+	private Contador contador;	
 	
 	public HiloDescontador(int vueltas, Contador contador) {
 		super();
