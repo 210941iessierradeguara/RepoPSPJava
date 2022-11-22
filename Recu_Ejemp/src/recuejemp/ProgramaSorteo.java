@@ -10,9 +10,9 @@ public class ProgramaSorteo {
 		int nPar = 0;
 		
 		for (int i = 1; i <= 5; i++) {
-			participantes.add(new Thread(
-								new Participante(resultado, i)
-								));
+			Participante p = new Participante(resultado, i);
+			participantes.add(p);
+			p.start();
 			
 			nPar++;
 		}
@@ -29,13 +29,6 @@ public class ProgramaSorteo {
 			synchronized (participante) {
 				participante.notify();
 			}
-		}
-		try {
-			resultado.wait();
-			System.out.println("El número premiado es: " +
-					resultado.consultarNumeroPremiado());
-		} catch (InterruptedException e) {
-			e.printStackTrace();
 		}
 		
 		for (Thread thread : participantes) {

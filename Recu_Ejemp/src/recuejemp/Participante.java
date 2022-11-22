@@ -20,11 +20,11 @@ public class Participante extends Thread {
 			}
 			if (numeroBoleto == resultado.consultarNumeroPremiado())
 			{
-				System.out.println("V");
+				System.out.println(this.getName() + "V");
 			} 
 			else 
 			{
-				System.out.println("D");
+				System.out.println(this.getName() + "D");
 			}
 		}
 		super.run();
