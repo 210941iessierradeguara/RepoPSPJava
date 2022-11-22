@@ -39,6 +39,8 @@ public class ProgramaSorteo {
 			}
 		}
 		
+		System.out.println("El número premiado es el: " + resultado.consultarNumeroPremiado());
+		
 	}
 
 }
