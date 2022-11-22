@@ -7,14 +7,12 @@ public class ProgramaSorteo {
 	public static void main(String[] args) {
 		ResultadoSorteo resultado = new ResultadoSorteo();
 		ArrayList<Thread> participantes = new ArrayList<>();
-		int nPar = 0;
+		int nPar = 5;
 		
-		for (int i = 1; i <= 5; i++) {
+		for (int i = 1; i <= nPar; i++) {
 			Participante p = new Participante(resultado, i);
 			participantes.add(p);
 			p.start();
-			
-			nPar++;
 		}
 		Thread tSorteo = new Thread(new Sorteo(resultado, nPar));
 		//Sorteo sorteo = new Sorteo(resultado, nPar);
